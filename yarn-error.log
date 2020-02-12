@@ -1,0 +1,47 @@
+Arguments: 
+  /usr/local/Cellar/node/12.10.0/bin/node /usr/local/bin/yarn add express body-praser morgan
+
+PATH: 
+  /Library/Frameworks/Python.framework/Versions/3.8/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.21.1
+
+Node version: 
+  12.10.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/body-praser: Not found
+      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66947:18)
+      at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140665:22)
+      at Request.emit (events.js:209:13)
+      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141637:10)
+      at Request.emit (events.js:209:13)
+      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141559:12)
+      at Object.onceWrapper (events.js:298:28)
+      at IncomingMessage.emit (events.js:214:15)
+      at endReadableNT (_stream_readable.js:1178:12)
+      at processTicksAndRejections (internal/process/task_queues.js:80:21)
+
+npm manifest: 
+  {
+    "name": "myapp",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
