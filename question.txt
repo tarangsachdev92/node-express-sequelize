@@ -1,0 +1,3 @@
+if company Id doesn't exist then error come but id is auto incremented in db and on store of new record id is incremented 
+for ex. right now id is 4, I try to add record with comonay Id not exist then error -> foreign key constraint->
+but when I try to add with prooper comopany_id then it will give me companyId 6 not 5 ? 

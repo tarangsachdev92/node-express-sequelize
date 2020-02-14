@@ -12,50 +12,32 @@ router.post(
   companyController.create
 );
 
-// // delete book
-// router.delete(
-//   '/',
-//   [
-//     booksValidator.booksRouteValidate('delete'),
-//     booksValidator.checkValidationResult,
-//     jwtMiddleware.validateJWT
-//   ],
-//   (req, res, next) => {
-//     booksController.deleteBook(req, res);
-//   }
-// );
-
-// // book lists
-// router.post(
-//   '/list',
-//   [
-//     booksValidator.booksRouteValidate('bookList'),
-//     booksValidator.checkValidationResult,
-//     jwtMiddleware.validateJWT
-//   ],
-//   (req, res, next) => {
-//     booksController.bookList(req, res);
-//   }
-// );
-
-// // book details
-// router.get(
-//   '/:book_id',
-//   [
-//     booksValidator.booksRouteValidate('bookDetail'),
-//     booksValidator.checkValidationResult,
-//     jwtMiddleware.validateJWT
-//   ],
-//   (req, res, next) => {
-//     booksController.bookDetail(req, res);
-//   }
-// );
+// add new book
+router.put(
+  '/:companyId', [],
+  companyController.update
+);
 
 router.get(
-  '/',
-  [
-  ],
+  '/', [],
   companyController.getCompanies
 );
+
+router.get(
+  '/:companyId', [],
+  companyController.getCompanyById
+);
+
+router.delete(
+  '/:companyId', [],
+  companyController.remove
+);
+
+// // add new book
+// router.post(
+//   '/add_with_branches', [],
+//   companyController.addWithBranches
+// );
+
 
 module.exports = router;

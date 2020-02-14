@@ -2,7 +2,7 @@
 'use strict';
 
 var router = express.Router();
-const companyController = require('../controllers/company');
+const employeeController = require('../controllers/employee');
 // const booksValidator = require('./booksValidator'); // validator
 // const jwtMiddleware = require('../../../middleware/jwtMiddleware');
 
@@ -10,55 +10,38 @@ const companyController = require('../controllers/company');
 router.post(
   '/', [],
   (req, res, next) => {
-    companyController.create(req, res);
+    employeeController.create(req, res);
   }
 );
 
-// // delete book
-// router.delete(
-//   '/',
-//   [
-//     booksValidator.booksRouteValidate('delete'),
-//     booksValidator.checkValidationResult,
-//     jwtMiddleware.validateJWT
-//   ],
-//   (req, res, next) => {
-//     booksController.deleteBook(req, res);
-//   }
-// );
+// add new book
+router.put(
+  '/:employeeId', [],
+  (req, res, next) => {
+    employeeController.update(req, res)
+  }
+);
 
-// // book lists
-// router.post(
-//   '/list',
-//   [
-//     booksValidator.booksRouteValidate('bookList'),
-//     booksValidator.checkValidationResult,
-//     jwtMiddleware.validateJWT
-//   ],
-//   (req, res, next) => {
-//     booksController.bookList(req, res);
-//   }
-// );
+// add new book
+router.get(
+  '/:employeeId', [],
+  (req, res, next) => {
+    employeeController.getEmployeeById(req, res)
+  }
+);
 
-// // book details
-// router.get(
-//   '/:book_id',
-//   [
-//     booksValidator.booksRouteValidate('bookDetail'),
-//     booksValidator.checkValidationResult,
-//     jwtMiddleware.validateJWT
-//   ],
-//   (req, res, next) => {
-//     booksController.bookDetail(req, res);
-//   }
-// );
+// add new book
+router.get(
+  '/company/:companyId', [],
+  (req, res, next) => {
+    employeeController.getEmployeeByCompanyId(req, res)
+  }
+);
 
 router.get(
-  '/',
-  [
-  ],
+  '/', [],
   (req, res, next) => {
-    companyController.getCompanies(req, res);
+    employeeController.getEmployees(req, res);
   }
 );
 

@@ -9,18 +9,20 @@ module.exports = (sequelize, DataTypes) => {
       },
       designation: {
         type: DataTypes.STRING,
-        defaultValue: false
+        defaultValue: ''
       },
-      salary: DataTypes.NUMBER
+      salary: {
+        type: DataTypes.NUMBER,
+        defaultValue: 0
+      }
     },
     {}
   );
   Employee.associate = function (models) {
-    // associations can be defined here
-
     Employee.belongsTo(models.Company, {
       foreignKey: 'companyId',
-      onDelete: 'CASCADE'
+      onDelete: 'CASCADE',
+      as: 'company'
     });
   };
   return Employee;
